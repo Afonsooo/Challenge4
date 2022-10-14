@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{cabecalho :: head('Listar emails')}"></header>
+
+<body>
+	<nav th:replace="~{menu :: nav}"></nav>
+	<span th:text="${mensagem}"></span>
+	<div class="container mt-3">
+		<h3>emails:</h3>
+		<table id="tbpedido" class="table table-bordered table-sm">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>From</th>
+					<th>To</th>
+					<th>Date</th>
+					<th>Subject</th>					
+					<th>Text</th>
+					
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="email : ${listarEmails}">
+					<td th:text="${email.getEmailId()}">ID</td>
+					<td th:text="${email.getEmailFrom()}">From</td>
+					<td th:text="${email.getEmailTo()}">To</td>					
+					<td th:text="${email.getSendDateEmail()}">Date</td>
+					<td th:text="${email.getSubject()}">Subject</td>		
+					<td th:text="${email.getText()}">Text</td>			
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

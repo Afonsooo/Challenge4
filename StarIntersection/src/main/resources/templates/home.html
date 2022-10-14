@@ -1,0 +1,21 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{cabecalho :: head('Listar produtos')}"></header>
+<body>
+	<nav th:replace="~{menu :: nav}"></nav>
+
+	<div class="container d-flex justify-content-center">
+		<h1>
+			Olá, <span th:text="${nomeUsuario}"></span>!
+		</h1>
+	</div>
+	<div class="container d-flex justify-content-center">
+		<p>Aqui você pode conferir e listar as APIs de produtos e emails.</p>
+	</div> 
+	<!-- <div class="container d-flex justify-content-center">
+		<img src="/images/rastreamento-monitoramento-melhor-frotas.jpg" alt="">
+	</div> -->
+</body>
+</html>
